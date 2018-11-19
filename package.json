@@ -1,0 +1,33 @@
+{
+  "name": "sendit-andela-vfn",
+  "version": "1.0.0",
+  "description": "SendIT is a courier service that helps users deliver parcels to different destinations.  #andela #andela-vfn #api #frontend",
+  "main": "src/bin/www.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "babel src/bin/index.babel.js",
+    "flow": "flow",
+    "prestart": "yarn build",
+    "start": "node build/bin/index.js",
+    "build": "babel src/ -d build/ --source-maps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamdekou/sendit-andela-vfn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/williamdekou/sendit-andela-vfn/issues"
+  },
+  "homepage": "https://github.com/williamdekou/sendit-andela-vfn#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "flow-bin": "^0.86.0"
+  }
+}
