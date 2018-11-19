@@ -4,3 +4,5 @@ function square(n: number): number {
 }
 
 square(5); // Error!
+
+export default square;
