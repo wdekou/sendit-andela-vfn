@@ -1,13 +1,14 @@
-import dotenv from "dotenv";
-import debug from "debug";
-import http from "http";
-import path from "path";
-import normalizePort from "normalize-port";
-import app from "..";
+import dotenv from 'dotenv';
+import debug from 'debug';
+import http from 'http';
+import path from 'path';
+import normalizePort from 'normalize-port';
+import app from '..';
 
-dotenv.config({ path: path.resolve(__dirname, "../../.env") });
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
-const log = debug(process.env.APP_NAME);
+const appName = process.env.APP_NAME || 'sendit';
+const log = debug(appName);
 let port = process.env.PORT || 5000;
 port = normalizePort(port);
 
@@ -15,9 +16,9 @@ const server = http.createServer(app);
 
 server.listen(port);
 
-server.on("error", () => {
+server.on('error', () => {
   log(`Error while try to run app on port ${process.env.PORT}`);
 });
-server.on("listening", () => {
+server.on('listening', () => {
   log(`Listening to ${port}`);
 });
