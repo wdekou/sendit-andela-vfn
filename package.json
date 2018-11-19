@@ -5,12 +5,15 @@
   "main": "src/bin/www.js",
   "scripts": {
     "test": "mocha --require @babel/register './src/**/*.spec.js'",
-    "serve": "babel src/bin/index.babel.js",
+    "serve": "nodemon  src/bin/index.babel.js",
     "flow": "flow",
     "prestart": "yarn build",
     "start": "node build/bin/index.js",
     "build": "babel src/ -d build/ --source-maps",
-    "lint": "eslint"
+    "lint": "eslint --fix src"
+  },
+  "engines": {
+    "node": "10.x"
   },
   "repository": {
     "type": "git",
@@ -22,7 +25,12 @@
     "url": "https://github.com/williamdekou/sendit-andela-vfn/issues"
   },
   "homepage": "https://github.com/williamdekou/sendit-andela-vfn#readme",
-  "dependencies": {},
+  "dependencies": {
+    "debug": "^4.1.0",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "normalize-port": "^1.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
@@ -35,6 +43,7 @@
     "eslint-plugin-flowtype": "^3.2.0",
     "eslint-plugin-import": "^2.14.0",
     "flow-bin": "^0.86.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.6"
   }
 }
