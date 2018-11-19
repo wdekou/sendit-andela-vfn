@@ -9,8 +9,7 @@
     "flow": "flow",
     "prestart": "yarn build",
     "start": "node build/bin/index.js",
-    "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false NODE_ENV=development npm install --only=dev --dev",
-    "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production;",
+    "heroku-prebuild": "npm install --only=dev",
     "build": "babel src/ -d build/ --source-maps",
     "lint": "eslint --fix src"
   },
