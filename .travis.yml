@@ -8,3 +8,4 @@ before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly
   - export PATH="$(yarn global bin):$PATH"
   - yarn global add eslint
+after_success: npm run coverage
