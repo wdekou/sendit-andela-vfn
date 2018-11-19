@@ -1,7 +1,8 @@
 import assert from 'assert';
+import square from './square';
 
 describe('Feature ', () => {
   it('squar', () => {
-    assert(true, true);
+    assert(square(2), 4);
   });
 });
