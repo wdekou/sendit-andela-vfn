@@ -4,7 +4,7 @@
   "description": "SendIT is a courier service that helps users deliver parcels to different destinations.  #andela #andela-vfn #api #frontend",
   "main": "src/bin/www.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --require @babel/register './src/**/*.spec.js'",
     "serve": "babel src/bin/index.babel.js",
     "flow": "flow",
     "prestart": "yarn build",
@@ -34,6 +34,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-flowtype": "^3.2.0",
     "eslint-plugin-import": "^2.14.0",
-    "flow-bin": "^0.86.0"
+    "flow-bin": "^0.86.0",
+    "mocha": "^5.2.0"
   }
 }
