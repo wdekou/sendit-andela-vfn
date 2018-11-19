@@ -1,0 +1,17 @@
+[ignore]
+.*/node_modules/.*
+.*/.git/.*
+.*/__test__/.*
+.*/fixtures/.*
+
+[include]
+<PROJECT_ROOT>/src/**/*.js
+
+[libs]
+flow/
+
+[lints]
+
+[options]
+
+[strict]
