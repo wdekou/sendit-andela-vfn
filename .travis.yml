@@ -6,5 +6,5 @@ cache:
     - node_modules
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly
-  - export PATH="$HOME/.yarn/bin:$PATH"
-install: true
+  - export PATH="$(yarn global bin):$PATH"
+  - yarn global add eslint
