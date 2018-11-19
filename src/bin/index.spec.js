@@ -1,8 +1,7 @@
 import assert from 'assert';
-import square from '.';
 
-describe('square', () => {
+describe('Feature ', () => {
   it('squar', () => {
-    assert.equal(square(4), 16);
+    assert(true, true);
   });
 });

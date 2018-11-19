@@ -9,9 +9,9 @@
     "flow": "flow",
     "prestart": "yarn build",
     "start": "node build/bin/index.js",
-    "heroku-prebuild": "npm install --only=dev",
-    "build": "./node_modules/.bin/babel src/ -d build/ --source-maps",
-    "lint": "eslint --fix src"
+    "build": "babel src/ -d build/ --source-maps",
+    "pretest": "yarn run lint",
+    "lint": "eslint ./src/**/*.js"
   },
   "engines": {
     "node": "10.x"
