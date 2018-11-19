@@ -10,7 +10,7 @@
     "prestart": "yarn build",
     "start": "node build/bin/index.js",
     "heroku-prebuild": "npm install --only=dev",
-    "build": "babel src/ -d build/ --source-maps",
+    "build": "./node_modules/.bin/babel src/ -d build/ --source-maps",
     "lint": "eslint --fix src"
   },
   "engines": {
