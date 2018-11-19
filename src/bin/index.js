@@ -7,8 +7,10 @@ import app from '..';
 
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
-const log = debug(process.env.APP_NAME);
-const port = normalizePort(process.env.PORT);
+const appName = process.env.APP_NAME || 'sendit';
+const log = debug(appName);
+let port = process.env.PORT || 5000;
+port = normalizePort(port);
 
 const server = http.createServer(app);
 
