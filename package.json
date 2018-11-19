@@ -11,7 +11,7 @@
     "start": "node build/bin/index.js",
     "build": "babel src/ -d build/ --source-maps",
     "pretest": "yarn run lint",
-    "lint": "eslint ./src"
+    "lint": "./node_modules/.bin/eslint ./src/**/*.js"
   },
   "engines": {
     "node": "10.x"
