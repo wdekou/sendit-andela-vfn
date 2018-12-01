@@ -1,0 +1,25 @@
+version: "3.5"
+
+services:
+  postgres:
+    image: postgres:11-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - "./docker/postgresql/data:/var/lib/postgresql/data"
+  pgadmin:
+    image: dpage/pgadmin4:3
+    ports:
+      - "8001:80"
+      - "4431:443"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "williamdekou@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "pgadmin"
+    volumes:
+      - "./docker/pgadmin:/var/lib/pgadmin"
+    links:
+      - postgres
+    depends_on:
+      - postgres

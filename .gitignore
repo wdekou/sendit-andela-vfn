@@ -65,3 +65,6 @@ build
 
 # Use only yarn lock file
 package-lock.json
+
+# Local test data from docker-images
+docker
