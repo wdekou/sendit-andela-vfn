@@ -4,7 +4,7 @@
   "description": "SendIT is a courier service that helps users deliver parcels to different destinations.  #andela #andela-vfn #api #frontend",
   "main": "src/bin/www.js",
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register -- './src/**/*.spec.js'",
+    "test": "nyc mocha './src/**/*.spec.js'",
     "serve": "nodemon  src/bin/index.babel.js",
     "flow": "flow",
     "prestart": "yarn build",
@@ -12,7 +12,9 @@
     "build": "babel src/ -d build/ --source-maps",
     "pretest": "yarn run lint",
     "lint": "eslint ./src/**/*.js",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "db:migrate": "node --require '@babel/register' src/db/migrations/index.js",
+    "setup:dev": "bash ./scripts/setup.dev.sh"
   },
   "engines": {
     "node": "10.x"
@@ -31,7 +33,8 @@
     "debug": "^4.1.0",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
-    "normalize-port": "^1.0.0"
+    "normalize-port": "^1.0.0",
+    "pg": "^7.7.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
@@ -40,6 +43,7 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/register": "^7.0.0",
     "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
     "coveralls": "^3.0.2",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
@@ -50,6 +54,8 @@
     "mocha": "^5.2.0",
     "mocha-lcov-reporter": "^1.3.0",
     "nodemon": "^1.18.6",
-    "nyc": "^13.1.0"
+    "nyc": "^13.1.0",
+    "sinon": "^7.1.1",
+    "sinon-chai": "^3.3.0"
   }
 }
